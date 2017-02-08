@@ -154,15 +154,15 @@ You can string together long remote actions by adding to the `keylist` array.
 
 | Event Name   | Codeset | Code |
 | ------------ | :-----: | :--: |
+| Volume Down  | 5       | 0    |
+| Volume Up    | 5       | 1    |
+| Mute Off     | 5       | 2    |
+| Mute On      | 5       | 3    |
+| Mute Toggle  | 5       | 4    |
+| Cycle Input  | 7       | 1    |
 | Channel Down | 8       | 0    |
 | Channel Up   | 8       | 1    |
 | Previous Ch  | 8       | 2    |
-| Volume Down  | 5       | 0    |
-| Volume Up    | 5       | 1    |
-| Mute Toggle  | 5       | 4    |
-| Mute On      | 5       | 3    |
-| Mute Off     | 5       | 2    |
-| Cycle Input  | 7       | 1    |
 | Power Off    | 11      | 0    |
 | Power On     | 11      | 1    |
 | Power Toggle | 11      | 2    |
@@ -412,4 +412,63 @@ Obtain `ITEMS_CNAME` and `HASHVAL` values from the `SETTINGS_CNAME` `ITEMS` arra
 | T\_EMAIL_V1                 |
 | T\_LIST\_VALUES_V1          |
 | T\_CEC\_DEVICE_V1           |
+
+#### Additional Remote Codes
+*ed: I can't see where these are used, but included anyway for completion.*
+
+##### Note
+Add a `MODIFIER` pair to `/key_command` request if used.
+
+| Event Name   | Codeset | Code | Modifier |
+| ------------ | :-----: | :--: | -------- |
+| 0            | 0       | 48   |          |
+| 1            | 0       | 49   |          |
+| &            | 0       | 38   |          |
+| *            | 0       | 42   |          |
+| Backspace    | 0       | 8    |          |
+| Bel          | 0       | 7    |          |
+| Cancel       | 0       | 14   |          |
+| ,            | 0       | 44   |          |
+| $            | 0       | 36   |          |
+| Esc          | 0       | 27   |          |
+| !            | 0       | 33   |          |
+| \            | 0       | 47   |          |
+| -            | 0       | 45   |          |
+| (            | 0       | 40   |          |
+| Linefeed     | 0       | 10   |          |
+| %            | 0       | 37   |          |
+| .            | 0       | 46   |          |
+| +            | 0       | 43   |          |
+| #            | 0       | 35   |          |
+| "            | 0       | 34   |          |
+| Return       | 0       | 13   |          |
+| )            | 0       | 41   |          |
+| '            | 0       | 39   |          |
+| Space        | 0       | 52   |          |
+| Tab          | 0       | 9    |          |
+| Audio MTS    | 5       | 5    | TYPE     |
+| MTS Cycle    | 5       | 6    | TYPE     |
+| Picture Mode | 6       | 0    |          |
+| Wide Mode    | 6       | 1    |          |
+| Wide Cycle   | 6       | 2    |          |
+
+#### Additional Remote Code Sets
+
+| Name         | Codeset |
+| ------------ | :-----: |
+| ASCII        | 0       |
+| Key Modifier | 1       |
+| Transport    | 2       |
+| D-Pad        | 3       |
+| Nav          | 4       |
+| Audio        | 5       |
+| Video        | 6       |
+| Input        | 7       |
+| CH           | 8       |
+| Color        | 9       |
+| Launch       | 10      |
+| Power        | 11      |
+| 3D           | 12      |
+| CC           | 13      |
+| Factor       | 14      |
 
