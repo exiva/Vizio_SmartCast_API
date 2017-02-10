@@ -25,6 +25,20 @@ without authentication.*
 * This does not cover any MyVizio Account APIs.
 * See an issue? Have a question? Open an issue, or find me on twitter [@exiva](https://twitter.com/exiva)
 
+## Display Discovery
+
+### Find IP Address
+Perform an [SSDP query](https://sdkdocs.roku.com/display/sdkdoc/External+Control+Guide#ExternalControlGuide-SSDP(SimpleServiceDiscoveryProtocol)) for `ST: urn:schemas-kinoma-com:device:shell:1`
+
+####Example
+```
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:schemas-kinoma-com:device:shell:1
+```
+
 ## Pairing
 ***required to control set.***
 ### Start Pairing
