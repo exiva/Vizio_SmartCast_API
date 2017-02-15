@@ -266,7 +266,7 @@ You can string together long remote actions by adding to the `keylist` array.
 ##### Expected Values
 | PUT `current_input` | From `name_input`   |
 | ------------------- | ------------------- |
-| VALUE               | ITEMS[x].CNAME      |
+| VALUE               | ITEMS[x].NAME       |
 | HASHVAL             | ITEMS[x].HASHVAL    |
 
 #### cURL Example
