@@ -140,7 +140,7 @@ The HTTP API server turns off when the set is sleeping. Send a WoL magic packet 
 ### Send remote control button press
 *Authenticated*
 
-`PUT /key_command`
+`PUT /key_command/`
 
 ####Body
 ```
@@ -154,7 +154,7 @@ The HTTP API server turns off when the set is sleeping. Send a WoL magic packet 
 ```
 
 #### cURL Example
-`curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X PUT -d '{"KEYLIST": [{"CODESET": 5,"CODE": 0,"ACTION":"KEYPRESS"}]}' https://myVizioTV:9000/key_command`
+`curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X PUT -d '{"KEYLIST": [{"CODESET": 5,"CODE": 0,"ACTION":"KEYPRESS"}]}' https://myVizioTV:9000/key_command/`
 
 #### Notes
 You can string together long remote actions by adding to the `keylist` array.
