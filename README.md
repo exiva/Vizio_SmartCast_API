@@ -137,6 +137,32 @@ Save `DEVICE_ID`, you'll need it for the challenge.
 ### Turning Set on From Sleep
 The HTTP API server turns off when the set is sleeping. Send a WoL magic packet to turn it on. *not supported when set runs in Eco mode.*
 
+### Power State
+*Authenticated*
+
+`GET /state/device/power_mode`
+
+####Response
+```
+{
+	"ITEMS": [{
+		"TYPE": "T_VALUE_V1",
+		"CNAME": "power_mode",
+		"NAME": "Power Mode",
+		"VALUE": 1
+	}],
+	"PARAMETERS": {
+		"HASHONLY": "FALSE",
+		"FLAT": "TRUE",
+		"HELPTEXT": "FALSE"
+	}
+	...
+}
+```
+
+####cURL Example
+`curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X GET https://myVizioTV:9000/state/device/power_mode`
+
 ### Send remote control button press
 *Authenticated*
 
