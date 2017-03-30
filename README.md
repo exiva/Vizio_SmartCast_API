@@ -30,7 +30,7 @@ without authentication.*
 ### Find IP Address
 Perform an [SSDP query](https://sdkdocs.roku.com/display/sdkdoc/External+Control+Guide#ExternalControlGuide-SSDP(SimpleServiceDiscoveryProtocol)) for `ST: urn:schemas-kinoma-com:device:shell:1`
 
-####Example
+#### Example
 ```
 M-SEARCH * HTTP/1.1
 HOST: 239.255.255.250:1900
@@ -121,7 +121,7 @@ Save `DEVICE_ID`, you'll need it for the challenge.
 `curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID":"12345","DEVICE_NAME":"cURL"}' https://myVizioTV:9000/pairing/cancel`
 
 ### Appendix
-####Status Results
+#### Status Results
 | RESULT                   | Meaning                       |
 | ------------------------ | ----------------------------- |
 | INVALID_PARAMETER        | Malformed Request             |
@@ -142,7 +142,7 @@ The HTTP API server turns off when the set is sleeping. Send a WoL magic packet 
 
 `GET /state/device/power_mode`
 
-####Response
+#### Response
 ```
 {
 	"ITEMS": [{
@@ -160,7 +160,7 @@ The HTTP API server turns off when the set is sleeping. Send a WoL magic packet 
 }
 ```
 
-####cURL Example
+#### cURL Example
 `curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X GET https://myVizioTV:9000/state/device/power_mode`
 
 ### Send remote control button press
@@ -168,7 +168,7 @@ The HTTP API server turns off when the set is sleeping. Send a WoL magic packet 
 
 `PUT /key_command/`
 
-####Body
+#### Body
 ```
 {
 	"KEYLIST": [{
