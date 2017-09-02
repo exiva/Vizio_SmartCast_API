@@ -28,7 +28,7 @@ without authentication.*
 ## Display Discovery
 
 ### Find IP Address
-Perform an [SSDP query](https://sdkdocs.roku.com/display/sdkdoc/External+Control+Guide#ExternalControlGuide-SSDP(SimpleServiceDiscoveryProtocol)) for `ST: urn:schemas-kinoma-com:device:shell:1`
+Perform an [SSDP query](https://sdkdocs.roku.com/display/sdkdoc/External+Control+API#ExternalControlAPI-SSDP(SimpleServiceDiscoveryProtocol)) for `ST: urn:schemas-kinoma-com:device:shell:1`
 
 #### Example
 ```
