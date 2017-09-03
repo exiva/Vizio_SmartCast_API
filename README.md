@@ -1,5 +1,12 @@
 # Vizio SmartCast API (2016+ Models)
 
+## API Clients
+
+The following API clients are available based on these API docs:
+
+- [vizio-smart-cast](https://github.com/heathbar/vizio-smart-cast) (JavaScript)
+- [pyvizio](https://github.com/vkorn/pyvizio) (Python)
+
 ## Overview
 * API Server runs on port `9000` using https. Will not respond to http.
 
