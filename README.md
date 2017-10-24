@@ -84,7 +84,7 @@ Save `DEVICE_ID`, you'll need it for the challenge.
 {
   "DEVICE_ID": String,
   "CHALLENGE_TYPE": Integer,
-  "RESPONSE_VALUE": Integer,
+  "RESPONSE_VALUE": String,
   "PAIRING_REQ_TOKEN": Integer  
 }
 ```
