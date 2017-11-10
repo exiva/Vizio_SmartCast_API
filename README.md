@@ -10,7 +10,7 @@ The following API clients are available based on these API docs:
 ## Overview
 * API Server runs on port `9000` using https. Will not respond to http.
 
-	*Don't port forward it. There are some commands that can be executed 
+	*Don't port forward it. There are some commands that can be executed
 without authentication.*
 * Certificate's CN is `BG2.prod.vizio.com` so will likely fail SSL validation.
 * API includes a `Status` object, `URI` requested, and Execution `time` on every response. It's included below, but excluded in all of the examples for redundancy.
@@ -195,21 +195,39 @@ You can string together long remote actions by adding to the `keylist` array.
 ### Appendix
 | Action   |
 | -------- |
-| KEYDOWN  | 
+| KEYDOWN  |
 | KEYUP    |
 | KEYPRESS |
 
 | Event Name   | Codeset | Code |
 | ------------ | :-----: | :--: |
+| Seek Forward | 2       | 0    |
+| Seek Back    | 2       | 1    |
+| Pause        | 2       | 2    |
+| Play         | 2       | 3    |
+| Down arrow   | 3       | 0    |
+| Left arrow   | 3       | 1    |
+| Ok           | 3       | 2    |
+| Up arrow     | 3       | 3    |
+| Left arrow   | 3       | 4    |
+| Right arrow  | 3       | 5    |
+| Back         | 4       | 0    |
+| SmartCast    | 4       | 3    |
+| CC Toggle    | 4       | 4    |
+| Info         | 4       | 6    |
+| Menu         | 4       | 8    |
 | Volume Down  | 5       | 0    |
 | Volume Up    | 5       | 1    |
 | Mute Off     | 5       | 2    |
 | Mute On      | 5       | 3    |
 | Mute Toggle  | 5       | 4    |
+| Picture Mode | 6       | 0    |
+| Picture Size | 6       | 2    |
 | Cycle Input  | 7       | 1    |
 | Channel Down | 8       | 0    |
 | Channel Up   | 8       | 1    |
 | Previous Ch  | 8       | 2    |
+| Exit         | 9       | 0    |
 | Power Off    | 11      | 0    |
 | Power On     | 11      | 1    |
 | Power Toggle | 11      | 2    |
@@ -518,4 +536,3 @@ Add a `MODIFIER` pair to `/key_command` request if used.
 | 3D           | 12      |
 | CC           | 13      |
 | Factor       | 14      |
-
