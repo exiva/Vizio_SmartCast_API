@@ -8,7 +8,7 @@ The following API clients are available based on these API docs:
 - [pyvizio](https://github.com/vkorn/pyvizio) (Python)
 
 ## Overview
-* API Server runs on port `9000` using https. Will not respond to http.
+* On firmware versions older than 4.0 the API server runs on port `9000`, on 4.0 and newer the API server runs on port `7345`. Both are using https and will not respond to http.
 
 	*Don't port forward it. There are some commands that can be executed 
 without authentication.*
