@@ -300,7 +300,9 @@ You can string together long remote actions by adding to the `keylist` array.
 | PUT `current_input` | From `name_input`   |
 | ------------------- | ------------------- |
 | VALUE               | ITEMS[x].NAME       |
-| HASHVAL             | ITEMS[x].HASHVAL    |
+| HASHVAL             | Current HashValue from a "get" of current_input  |
+
+Note: The hashvalue is from the current input, not the list of inputs.
 
 #### cURL Example
 `curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X PUT -d '{"REQUEST": "MODIFY","VALUE": "HDMI-1","HASHVAL": 1384176329}' https://myVizioTV:9000/menu_native/dynamic/tv_settings/devices/current_input`
