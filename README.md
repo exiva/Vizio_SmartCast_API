@@ -313,7 +313,7 @@ Note: The hashvalue is from the current input, not the list of inputs.
 
 `PUT /app/launch`
 
-### Body
+#### Body
 ```
 {
 	"VALUE": {
@@ -447,6 +447,7 @@ Obtain `ITEMS_CNAME` and `HASHVAL` values from the `SETTINGS_CNAME` `ITEMS` arra
 | Netflix                       | 3          | 1        | None     |
 | YouTubeTV                     | 5          | 1        | None     |
 
+> Values stored in `resources/res/raw/apps.json` and `resources/res/raw/apps_availability.json` in the Android APK file.
 
 
 ## Misc
