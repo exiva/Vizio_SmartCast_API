@@ -307,6 +307,24 @@ Note: The hashvalue is from the current input, not the list of inputs.
 #### cURL Example
 `curl -k -H "Content-Type: application/json" -H "AUTH: 123A456B" -X PUT -d '{"REQUEST": "MODIFY","VALUE": "HDMI-1","HASHVAL": 1384176329}' https://myVizioTV:9000/menu_native/dynamic/tv_settings/devices/current_input`
 
+
+### Launch TV App
+*Authenticated*
+
+`PUT /app/launch`
+
+#### Body
+```
+{
+	"VALUE": {
+		"MESSAGE": String,
+		"NAME_SPACE": Integer,
+		"APP_ID": Integer
+	}
+}
+```
+*See [App IDs](#app-ids) for Values*
+
 ## Display Settings
 ### Read Settings
 *Authenticated*
@@ -393,6 +411,43 @@ Obtain `ITEMS_CNAME` and `HASHVAL` values from the `SETTINGS_CNAME` `ITEMS` arra
 | system/system\_information/uli_information     |
 | mobile_devices                                 |
 | cast                                           |
+
+### App IDs
+| Name                          | Name_Space | App_id   | Message  |
+| ----------------------------- | :--------: | :------: | -------- |
+| Hulu                          | 2          | 3        | None     |
+| Prime Video                   | 2          | 4        | None     |
+| Crackle                       | 2          | 5        | None     |
+| iHeartRadio                   | 2          | 6        | None     |
+| Fandango Now                  | 2          | 7        | None     |
+| Plex                          | 2          | 9        | None     |
+| NBC                           | 2          | 10       | None     |
+| Baeble                        | 2          | 11       | None     |
+| Curiosity Stream              | 2          | 12       | None     |
+| Newsy                         | 2          | 15       | None     |
+| Dove Channel                  | 2          | 16       | None     |
+| ConTV                         | 2          | 18       | None     |
+| Toon Goggles                  | 2          | 21       | None     |
+| Vudu                          | 2          | 21       | https://my.vudu.com/castReceiver/index.html?launch-source=app-icon |
+| WatchFree                     | 2          | 22       | None     |
+| FilmRise                      | 2          | 24       | None     |
+| TasteIt                       | 2          | 26       | None     |
+| AsianCrush                    | 2          | 27       | https://html5.asiancrush.com/?ua=viziosmartcast |
+| DAZN                          | 2          | 34       | None     |
+| Flixfling                     | 2          | 36       | None     |
+| CBS All Access                | 2          | 37       | None     |
+| FitFusion by Jillian Michaels | 2          | 39       | None     |
+| Redbox                        | 2          | 41       | None     |
+| CBS CBS News                  | 2          | 42       | None     |
+| Cocoro TV                     | 2          | 55       | None     |
+| Love Destination              | 2          | 57       | None     |
+| Haystack TV                   | 0          | 898AF734 | {"CAST_NAMESPACE":"urn:x-cast:com.google.cast.media","CAST_MESSAGE":{"type":"LOAD","media":{},"autoplay":true,"currentTime":0,"customData":{"platform":"sctv"}}} |
+| XUMO                          | 0          | 36E1EA1F | {"CAST_NAMESPACE":"urn:x-cast:com.google.cast.media","CAST_MESSAGE":{"type":"LOAD","media":{},"autoplay":true,"currentTime":0,"customData":{}}} |
+| Pluto TV                      | 0          | E6F74C01 | {"CAST_NAMESPACE":"urn:x-cast:tv.pluto","CAST_MESSAGE":{"command":"initializePlayback","channel":"","episode":"","time":0}} |
+| Netflix                       | 3          | 1        | None     |
+| YouTubeTV                     | 5          | 1        | None     |
+
+> Values stored in `resources/res/raw/apps.json` and `resources/res/raw/apps_availability.json` in the Android APK file.
 
 
 ## Misc
