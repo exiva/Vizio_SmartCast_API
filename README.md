@@ -319,7 +319,7 @@ Note: The hashvalue is from the current input, not the list of inputs.
 	"VALUE": {
 		"MESSAGE": String,
 		"NAME_SPACE": Integer,
-		"APP_ID": Integer
+		"APP_ID": String
 	}
 }
 ```
