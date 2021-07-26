@@ -10,7 +10,7 @@ The following API clients are available based on these API docs:
 ## Overview
 * On firmware versions older than 4.0 the API server runs on port `9000`, on 4.0 and newer the API server runs on port `7345`. Both are using https and will not respond to http.
 
-	*Don't port forward it. There are some commands that can be executed 
+	*Don't port forward it. There are some commands that can be executed
 without authentication.*
 * Certificate's CN is `BG2.prod.vizio.com` so will likely fail SSL validation.
 * API includes a `Status` object, `URI` requested, and Execution `time` on every response. It's included below, but excluded in all of the examples for redundancy.
@@ -74,7 +74,7 @@ ST: urn:schemas-kinoma-com:device:shell:1
 `curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID":"12345","DEVICE_NAME":"cURL Example"}' https://myVizioTV:9000/pairing/start`
 
 #### Notes
-Save `DEVICE_ID`, you'll need it for the challenge.
+Save `DEVICE_ID`, you'll need it for the challenge or to cancel pairing.
 
 ### Submit Challenge
 `PUT /pairing/pair`
@@ -85,7 +85,7 @@ Save `DEVICE_ID`, you'll need it for the challenge.
   "DEVICE_ID": String,
   "CHALLENGE_TYPE": Integer,
   "RESPONSE_VALUE": String,
-  "PAIRING_REQ_TOKEN": Integer  
+  "PAIRING_REQ_TOKEN": Integer
 }
 ```
 
@@ -111,8 +111,10 @@ Save `DEVICE_ID`, you'll need it for the challenge.
 #### Body
 ```
 {
-  "DEVICE_NAME": String,
-  "DEVICE_ID": String
+  "DEVICE_ID": String,
+  "CHALLENGE_TYPE": Integer,
+  "RESPONSE_VALUE": "1111",
+  "PAIRING_REQ_TOKEN": Integer
 }
 ```
 
@@ -125,7 +127,10 @@ Save `DEVICE_ID`, you'll need it for the challenge.
 ```
 
 #### cURL Example
-`curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID":"12345","DEVICE_NAME":"cURL"}' https://myVizioTV:9000/pairing/cancel`
+`curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID":"12345","CHALLENGE_TYPE": 1,"RESPONSE_VALUE": "1111","PAIRING_REQ_TOKEN": 0}' https://myVizioTV:9000/pairing/cancel`
+
+#### Notes
+For cancellation, `RESPONSE_VALUE` should be hard-coded to "1111".
 
 ### Appendix
 #### Status Results
@@ -195,7 +200,7 @@ You can string together long remote actions by adding to the `keylist` array.
 ### Appendix
 | Action   |
 | -------- |
-| KEYDOWN  | 
+| KEYDOWN  |
 | KEYUP    |
 | KEYPRESS |
 
