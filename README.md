@@ -452,8 +452,7 @@ Obtain `ITEMS_CNAME` and `HASHVAL` values from the `SETTINGS_CNAME` `ITEMS` arra
 | Netflix                       | 3          | 1        | None     |
 | YouTubeTV                     | 5          | 1        | None     |
 
-> Values stored in `resources/res/raw/apps.json` and `resources/res/raw/apps_availability.json` in the Android APK file.
-
+> A current list of `app_id`'s can be found at http://hometest.buddytv.netdna-cdn.com/appservice/vizio_apps_prod.json and `NAME_SPACE` and `MESSAGE` values needed can be found in http://hometest.buddytv.netdna-cdn.com/appservice/app_availability_prod.json
 
 ## Misc
 
