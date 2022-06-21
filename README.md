@@ -104,7 +104,7 @@ Save `DEVICE_ID`, you'll need it for the challenge or to cancel pairing.
 
 #### Notes
 `RESPONSE_VALUE` key is the code displayed on the TV.\
-`PAIRING_REQ_TOKEN` key is the code printed to the terminal after the pairing start request.
+`PAIRING_REQ_TOKEN` key is returned from the /pairing/start request.
 
 ### Cancel Pairing
 `PUT /pairing/cancel`
