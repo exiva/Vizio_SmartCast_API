@@ -100,10 +100,11 @@ Save `DEVICE_ID`, you'll need it for the challenge or to cancel pairing.
 ```
 
 #### cURL Example
-`curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID": "12345","CHALLENGE_TYPE": 1,"RESPONSE_VALUE": "1234","PAIRING_REQ_TOKEN": 0}' https://myVizioTV:9000/pairing/pair`
+`curl -k -H "Content-Type: application/json" -X PUT -d '{"DEVICE_ID": "12345","CHALLENGE_TYPE": 1,"RESPONSE_VALUE": "1234","PAIRING_REQ_TOKEN": 654321}' https://myVizioTV:9000/pairing/pair`
 
 #### Notes
-`RESPONSE_VALUE` key is the code displayed on the TV.
+`RESPONSE_VALUE` key is the code displayed on the TV.\
+`PAIRING_REQ_TOKEN` key is returned from the /pairing/start request.
 
 ### Cancel Pairing
 `PUT /pairing/cancel`
