@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "726081a9-ba4d-48e6-aab2-a1f7087a77d8",
+		"name": "Power",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Power State",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"CurrentPowerState\", jsonData.ITEMS[0].VALUE);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Auth",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{RootURI}}/state/device/power_mode",
+					"host": [
+						"{{RootURI}}"
+					],
+					"path": [
+						"state",
+						"device",
+						"power_mode"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
