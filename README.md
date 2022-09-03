@@ -1,7 +1,5 @@
 # Vizio SmartCast API (2016+ Models)
 
-[[_TOC_]]
-
 ## API Clients
 
 The following API clients are available based on these API docs:
