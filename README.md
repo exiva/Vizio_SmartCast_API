@@ -30,7 +30,7 @@ without authentication.*
 * All requests made should contain a JSON body with the header `Content-Type: application/json` set.
 * When authentication is required, send `Auth: AUTH_TOKEN` header with request.
 * This does not cover any MyVizio Account APIs.
-* See an issue? Have a question? Open an issue, or find me on twitter [@exiva](https://twitter.com/exiva)
+* See an issue? Have a question? Open an issue, or find me on Mastodon [@exiva@social.lol](https://social.lol/@exiva)
 
 ## Display Discovery
 
