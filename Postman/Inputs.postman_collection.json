@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "9f0fd0cd-35cd-4a2c-98ba-1153bc98d0b1",
+		"name": "Inputs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - Get Current Input",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"CurrentInputHash\", jsonData.ITEMS[0].HASHVAL);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Auth",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{RootURI}}/menu_native/dynamic/tv_settings/devices/current_input",
+					"host": [
+						"{{RootURI}}"
+					],
+					"path": [
+						"menu_native",
+						"dynamic",
+						"tv_settings",
+						"devices",
+						"current_input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - List Inputs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var thisInputName;\r",
+							"\r",
+							"// loop through inputs to create env vars\r",
+							"for (let i = 0; i <= 7; i++) {\r",
+							"    thisInputName = jsonData.ITEMS[i].NAME\r",
+							"    postman.setEnvironmentVariable(thisInputName, jsonData.ITEMS[i].NAME);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Auth",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{RootURI}}/menu_native/dynamic/tv_settings/devices/name_input",
+					"host": [
+						"{{RootURI}}"
+					],
+					"path": [
+						"menu_native",
+						"dynamic",
+						"tv_settings",
+						"devices",
+						"name_input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - Change Input",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Auth",
+						"value": "{{AUTH_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"REQUEST\": \"MODIFY\",\r\n    \"VALUE\": \"{{TV}}\",\r\n    \"HASHVAL\": {{CurrentInputHash}}\r\n}"
+				},
+				"url": {
+					"raw": "{{RootURI}}/menu_native/dynamic/tv_settings/devices/current_input",
+					"host": [
+						"{{RootURI}}"
+					],
+					"path": [
+						"menu_native",
+						"dynamic",
+						"tv_settings",
+						"devices",
+						"current_input"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
